@@ -566,7 +566,7 @@
 - (void)addProgressViewWithFrame:(CGRect)frame isTriangle:(BOOL)isTriangle hasBorder:(BOOL)hasBorder hollow:(BOOL)isHollow cornerRadius:(CGFloat)cornerRadius {
     WMProgressView *pView = [[WMProgressView alloc] initWithFrame:frame];
     pView.itemFrames = [self convertProgressWidthsToFrames];
-    pView.color = self.lineColor.CGColor;
+    pView.color = self.lineColor;
     pView.isTriangle = isTriangle;
     pView.hasBorder = hasBorder;
     pView.hollow = isHollow;

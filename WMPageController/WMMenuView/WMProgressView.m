@@ -112,7 +112,8 @@
         CGContextAddLineToPoint(ctx, endX, height);
         CGContextAddLineToPoint(ctx, startX + width / 2.0, 0);
         CGContextClosePath(ctx);
-        CGContextSetFillColorWithColor(ctx, self.color);
+        
+        CGContextSetFillColorWithColor(ctx, self.color.CGColor);
         CGContextFillPath(ctx);
         return;
     }
@@ -121,11 +122,11 @@
     CGContextAddPath(ctx, path.CGPath);
     
     if (self.hollow) {
-        CGContextSetStrokeColorWithColor(ctx, self.color);
+        CGContextSetStrokeColorWithColor(ctx, self.color.CGColor);
         CGContextStrokePath(ctx);
         return;
     }
-    CGContextSetFillColorWithColor(ctx, self.color);
+    CGContextSetFillColorWithColor(ctx, self.color.CGColor);
     CGContextFillPath(ctx);
     
     if (self.hasBorder) {
@@ -137,7 +138,7 @@
         CGContextAddPath(ctx, path.CGPath);
         
         // 绘制
-        CGContextSetStrokeColorWithColor(ctx, self.color);
+        CGContextSetStrokeColorWithColor(ctx, self.color.CGColor);
         CGContextStrokePath(ctx);
     }
 }
